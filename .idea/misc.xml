@@ -3,8 +3,10 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/Saawry/AndroidStudioProjects/TVL_Task/app/src/main/res/drawable-v24/ic_baseline_clear.xml" value="0.1935" />
         <entry key="..\:/Users/Saawry/AndroidStudioProjects/TVL_Task/app/src/main/res/layout/activity_main.xml" value="0.18541666666666667" />
         <entry key="..\:/Users/Saawry/AndroidStudioProjects/TVL_Task/app/src/main/res/layout/activity_new_task.xml" value="0.18541666666666667" />
+        <entry key="..\:/Users/Saawry/AndroidStudioProjects/TVL_Task/app/src/main/res/layout/card_task.xml" value="0.18541666666666667" />
         <entry key="..\:/Users/Saawry/AndroidStudioProjects/TVL_Task/app/src/main/res/menu/main_menu.xml" value="0.18541666666666667" />
       </map>
     </option>
