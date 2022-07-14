@@ -2,12 +2,14 @@ package com.mostafiz.android.tvltask.adapter
 
 import android.annotation.SuppressLint
 import android.content.Context
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.annotation.NonNull
 import androidx.recyclerview.widget.RecyclerView
 import com.mostafiz.android.tvltask.databinding.CardTaskBinding
 import com.mostafiz.android.tvltask.models.TaskModel
+import com.mostafiz.android.tvltask.ui.ViewTaskActivity
 
 
 class TaskAdapter(
@@ -40,6 +42,12 @@ class TaskAdapter(
             deleteTask.deleteTask(model.id)
         }
 
+
+        holder.itemView.setOnClickListener {
+            val intent = Intent(context, ViewTaskActivity::class.java)
+            intent.putExtra("id",model.id)
+            context.startActivity(intent)
+        }
 
 
     }
