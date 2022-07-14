@@ -13,6 +13,10 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.TVL_Task"
         tools:targetApi="31">
+
+        <activity
+            android:name=".ui.NewTaskActivity"
+            android:exported="false" />
         <activity
             android:name=".ui.MainActivity"
             android:exported="true">

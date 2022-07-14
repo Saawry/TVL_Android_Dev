@@ -1,4 +1,4 @@
-package viewmodel
+package com.mostafiz.android.tvltask.viewmodel
 
 import android.app.Application
 import androidx.annotation.NonNull
@@ -13,12 +13,12 @@ class TaskViewModel(@NonNull application: Application?) : AndroidViewModel(appli
     var appDatabase: AppDatabase? = AppDatabase.getDatabase(application!!)
 
 
-    fun insertTask(contactModel: TaskModel) {
-        appDatabase?.taskDao()!!.insertTask(contactModel)
+    fun insertTask(taskModel: TaskModel) {
+        appDatabase?.taskDao()!!.insertTask(taskModel)
     }
 
-    fun insertTaskList(contactModelList: List<TaskModel?>?) {
-        appDatabase?.taskDao()!!.insertTaskList(contactModelList)
+    fun insertTaskList(taskModelList: List<TaskModel?>?) {
+        appDatabase?.taskDao()!!.insertTaskList(taskModelList)
     }
 
 
