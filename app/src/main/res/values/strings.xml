@@ -1,3 +1,13 @@
 <resources>
     <string name="app_name">TVL_Task</string>
+    <string name="title_activity_settings">SettingsActivity</string>
+
+    <!-- Preference Titles -->
+    <string name="messages_header">Messages</string>
+    <string name="theme_header">Theme</string>
+
+
+    <!-- theme Preferences -->
+    <string name="dark_mode">Dark Mode</string>
+    <string name="update_settings">Update Settings</string>
 </resources>

@@ -4,8 +4,12 @@ import android.annotation.SuppressLint
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.Menu
+import android.view.MenuItem
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatDelegate
 import androidx.lifecycle.ViewModelProvider
+import androidx.preference.PreferenceManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.mostafiz.android.tvltask.R
 import com.mostafiz.android.tvltask.adapter.TaskAdapter
@@ -30,6 +34,15 @@ class MainActivity : AppCompatActivity() {
 
         taskViewModel = ViewModelProvider(this)[TaskViewModel::class.java]
 
+
+        val sharedPref = PreferenceManager.getDefaultSharedPreferences(this)
+        val dark = sharedPref.getBoolean("theme", true)
+
+        if (dark) {
+            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
+        } else {
+            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
+        }
 
 
         binding.btnAddNewTask.setOnClickListener {
@@ -98,5 +111,26 @@ class MainActivity : AppCompatActivity() {
                         .show()
                 }
             })
+    }
+
+
+
+    override fun onPrepareOptionsMenu(menu: Menu): Boolean {
+        menu.clear() //Clear view of previous menu
+        val inflater = menuInflater
+        inflater.inflate(R.menu.main_menu, menu)
+
+        return super.onPrepareOptionsMenu(menu)
+    }
+
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+
+        if (item.itemId == R.id.menu_settings) {
+            val intent = Intent(this, SettingsActivity::class.java)
+            startActivity(intent)
+            return false
+        }
+        return super.onOptionsItemSelected(item)
     }
 }
